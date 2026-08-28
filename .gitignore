@@ -33,3 +33,9 @@ npm-debug.log*
 
 # Unrelated project stub
 AVISALA/
+
+# Next.js website
+web/.next/
+web/out/
+web/node_modules/
+

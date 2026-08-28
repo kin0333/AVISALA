@@ -4,15 +4,47 @@
 
 A Chrome extension that compresses prompts by 50–80% before they hit the LLM — right from any text box on any page.
 
-## Phase 1 — Chrome Extension + Token Dashboard
+The **AVISALA** website (Next.js) is the live product surface you deploy to Vercel. The Chrome extension still works on every prompt box, including that site.
+
+## Phase 1 — Chrome Extension + AVISALA website
 
 ### Stack
 
 - **Bun** (runtime & package manager)
 - **WXT** (extension framework, Manifest V3)
 - **React 18** + **TypeScript** + **Tailwind CSS**
+- **Next.js** website in `web/` (Vercel)
 
 ---
+
+## Website (Vercel)
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Open [http://localhost:3001](http://localhost:3001)
+
+- `/` landing
+- `/playground` live ChatGPT-style composer (textarea + contenteditable)
+- `/dashboard` 4,200 → 850 token demo
+- `POST /api/compress` squeeze API
+
+### Deploy to Vercel
+
+1. Import [github.com/kin0333/AVISALA](https://github.com/kin0333/AVISALA)
+2. Keep the project name **AVISALA**
+3. Root settings are already in `vercel.json` (`web/` Next.js app)
+4. Deploy
+
+Or from the repo root:
+
+```bash
+npx vercel
+```
+
 
 ## Quick Start
 
@@ -34,7 +66,7 @@ Then in Chrome:
 1. Open `chrome://extensions`
 2. Enable **Developer mode**
 3. Click **Load unpacked** → select `.output/chrome-mv3`
-4. Open `demo/playground.html` in Chrome to test
+4. Open [http://localhost:3001/playground](http://localhost:3001/playground) to test on the live AVISALA site
 
 ---
 
@@ -76,8 +108,10 @@ lib/
 server/
   index.ts               — Bun mock POST /compress (port 8000)
 
-demo/
-  playground.html        — textarea + contenteditable test page
+web/
+  app/                   — AVISALA Next.js site (Vercel)
+  app/api/compress       — squeeze API used by the playground
+
 ```
 
 ---

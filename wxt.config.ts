@@ -3,6 +3,13 @@ import { defineConfig } from "wxt"
 export default defineConfig({
   extensionApi: "chrome",
   modules: ["@wxt-dev/module-react"],
+  vite: () => ({
+    server: {
+      watch: {
+        ignored: ["**/web/**"],
+      },
+    },
+  }),
   manifest: {
     name: "MemSqueeze",
     description: "Infinite local memory. Zero token bloat.",
