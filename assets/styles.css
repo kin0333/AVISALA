@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --neon: #39FF14;
+  }
+
+  body {
+    @apply bg-dark-bg text-white antialiased;
+  }
+}

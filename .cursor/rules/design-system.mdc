@@ -1,0 +1,11 @@
+---
+title: MemSqueeze Design System Rules
+auto-attach: "**/*.{tsx,css}"
+---
+# Design System & Component Standards
+## Stack
+React 18+ with TypeScript, Bun as package manager, Tailwind CSS for styling.
+## Visuals
+Minimalist UI/UX. Use neutral tones with a stark, high-contrast accent color (e.g., neon green) for the live token reduction counter.
+## Code Style
+Use functional components with hooks only. Extract reusable logic into custom hooks.

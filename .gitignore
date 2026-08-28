@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build output
+.output/
+dist/
+
+# WXT generated types
+.wxt/
+
+# Environment & secrets
+.env
+.env.*
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.suo
+*.user
+
+# Bun
+bun.lock
+bunfig.toml
+
+# Logs
+*.log
+npm-debug.log*
+
+# Unrelated project stub
+AVISALA/
